@@ -96,3 +96,7 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
     }
     res.json(user);
   } catch (error) {
+    console.error("Error fetching user:", error);
+    res.status(500).json({ error: "Server Error" });
+  }
+};

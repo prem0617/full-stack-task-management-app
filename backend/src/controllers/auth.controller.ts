@@ -1,5 +1,4 @@
 import bcrypt from "bcrypt";
-
 import { Response, Request } from "express";
 import UserModel from "../models/user.model";
 import { generateTokenAndSetCookies } from "../helpers/geterateTokenAndSetCookies";
@@ -83,10 +82,11 @@ export const login = async (req: Request, res: Response): Promise<void> => {
     res.json({ isUserExists, token, success: true });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Server Error" ,errorMessage:error});
+    res.status(500).json({ error: "Server Error", errorMessage: error });
   }
 };
 
+// Get current user information
 export const getMe = async (req: Request, res: Response): Promise<void> => {
   try {
     const user = req.user;
@@ -95,24 +95,4 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
       return;
     }
     res.json(user);
-    return;
   } catch (error) {
-    error;
-    res.status(500).json({ error: "Error in GetMe" });
-  }
-};
-
-export const logout = async (req: Request, res: Response): Promise<void> => {
-  try {
-    res.clearCookie("foodApp", {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
-    });
-
-    res.status(200).json({ message: "Logged out successfully" });
-  } catch (error) {
-    console.error("Logout error:", error);
-    res.status(500).json({ message: "Server error while logging out" });
-  }
-};

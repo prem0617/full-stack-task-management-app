@@ -125,7 +125,7 @@ var login = function (req, res) { return __awaiter(void 0, void 0, void 0, funct
                     return [2 /*return*/];
                 }
                 userId = isUserExists._id;
-                token = (0, geterateTokenAndSetCookies_1.geterateTokenAndSetCookies)(req, res, userId.toString());
+                token = (0, generateTokenAndSetCookies_1.generateTokenAndSetCookies_1)(req, res, userId.toString());
                 res.json({ isUserExists: isUserExists, token: token, success: true });
                 return [3 /*break*/, 4];
             case 3:

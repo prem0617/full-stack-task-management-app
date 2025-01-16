@@ -16,7 +16,7 @@ dotenv_1.default.config();
 var port = process.env.PORT || 3000;
 (0, connection_1.default)();
 var corsOptions = {
-    origin: "http://localhost:5173/",
+    origin: "https://full-stack-task-management-app-zlja.onrender.com/",
     credentials: true,
 };
 app.use((0, cookie_parser_1.default)());

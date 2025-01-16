@@ -1,6 +1,7 @@
 import { Response, Request } from "express";
 import jwt from "jsonwebtoken";
 
+// Corrected function name
 export const generateTokenAndSetCookies = (
   req: Request,
   res: Response,
@@ -28,3 +29,4 @@ export const generateTokenAndSetCookies = (
     res.status(500).json({ error: "Server Error" });
   }
 };
+

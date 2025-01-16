@@ -48,7 +48,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ menuItem }) => {
       try {
         const { name, category, price } = data;
         const response = await axios.put(
-          `http://localhost:8080/menu/${menuItem._id}`,
+          `https://full-stack-task-management-app-zlja.onrender.com/menu/${menuItem._id}`,
           { name, category, price },
           {
             withCredentials: true,
@@ -81,7 +81,7 @@ const ItemCard: React.FC<ItemCardProps> = ({ menuItem }) => {
     mutationFn: async () => {
       try {
         const response = await axios.delete(
-          `http://localhost:8080/menu/${menuItem._id}`,
+          `https://full-stack-task-management-app-zlja.onrender.com/menu/${menuItem._id}`,
           { withCredentials: true }
         );
 

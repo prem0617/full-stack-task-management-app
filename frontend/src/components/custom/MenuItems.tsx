@@ -49,9 +49,12 @@ const MenuItems: React.FC = () => {
     queryKey: ["menuItems"],
     queryFn: async () => {
       try {
-        const response = await axios.get("http://localhost:8080/menu", {
-          withCredentials: true,
-        });
+        const response = await axios.get(
+          "https://full-stack-task-management-app-zlja.onrender.com/menu",
+          {
+            withCredentials: true,
+          }
+        );
 
         if (response.data.error) throw new Error(response.data.error);
         return response.data?.allItems;
@@ -71,7 +74,7 @@ const MenuItems: React.FC = () => {
       try {
         const { name, category, price } = formData;
         const response = await axios.post(
-          "http://localhost:8080/menu",
+          "https://full-stack-task-management-app-zlja.onrender.com/menu",
           {
             name,
             price,

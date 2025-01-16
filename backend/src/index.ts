@@ -16,7 +16,7 @@ const port = process.env.PORT || 3000;
 connectDB();
 
 const corsOptions = {
-  origin: "http://localhost:5173/",
+  origin: "https://full-stack-task-management-app-zlja.onrender.com/",
   credentials: true,
 };
 

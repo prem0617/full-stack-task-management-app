@@ -1,9 +1,13 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true
-  }
+    "outDir": "dist", // Output directory for compiled files
+    "rootDir": "src", // Root directory for input files
+    "module": "commonjs", // Module system
+    "target": "ES2020", // JavaScript target version
+    "strict": true, // Enable strict type-checking options
+    "esModuleInterop": true, // Compatibility with ES module imports
+    "skipLibCheck": true // Skip type-checking for declaration files
+  },
+  "include": ["src"], // Files to include
+  "exclude": ["node_modules"] // Files to exclude
 }

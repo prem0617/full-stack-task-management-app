@@ -18,7 +18,7 @@ export const generateTokenAndSetCookies = (
     res.cookie("foodApp", token, {
       httpOnly: true,
       secure: isProduction,  // Set to true if in production (HTTPS required)
-      sameSite: isProduction ? 'None' : 'Lax', // Cross-origin cookie handling
+      sameSite: isProduction ? 'none' : 'lax', // Cross-origin cookie handling
       maxAge: 10 * 24 * 60 * 60 * 1000, // 10 days in milliseconds
     });
 
@@ -28,4 +28,3 @@ export const generateTokenAndSetCookies = (
     res.status(500).json({ error: "Server Error" });
   }
 };
-

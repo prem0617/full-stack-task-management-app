@@ -1,6 +1,5 @@
 # Node.js dependencies
 node_modules/
-dist/
 
 # Logs
 npm-debug.log*
@@ -15,8 +14,6 @@ pnpm-debug.log*
 # TypeScript cache and build outputs
 *.tsbuildinfo
 *.d.ts
-*.js.map
-*.js
 
 # OS-specific files
 .DS_Store
@@ -31,7 +28,7 @@ Thumbs.db
 # Coverage reports
 coverage/
 
-# Optional lock files (uncomment if you want to ignore them)
-# package-lock.json
-# yarn.lock
-# pnpm-lock.yaml
+# Lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

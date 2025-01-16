@@ -1,5 +1,5 @@
 import bcrypt from "bcrypt";
-import User from "../models/user.model"; // Assuming the correct file path
+import UserModel from "../models/user.model";
 import { generateTokenAndSetCookies } from "../helpers/generateTokenAndSetCookies"; // Corrected import
 
 // Register new user

@@ -78,7 +78,7 @@ export const login = async (req: Request, res: Response): Promise<void> => {
 
     const userId = isUserExists._id;
 
-    const token = geterateTokenAndSetCookies(req, res, userId.toString());
+    const token = generateTokenAndSetCookies(req, res, userId.toString());
 
     res.json({ isUserExists, token, success: true });
   } catch (error) {

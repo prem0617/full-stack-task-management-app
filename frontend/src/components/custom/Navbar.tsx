@@ -50,7 +50,7 @@ const Navbar = () => {
     },
     onSuccess: async () => {
       // Invalidate queries related to authUser and remove it from the cache
-      await queryClient.invalidateQueries({ queryKey: ["authUser"] });
+      //await queryClient.invalidateQueries({ queryKey: ["authUser"] });
       await queryClient.removeQueries({ queryKey: ["authUser"] });
       // Optionally, remove cart or other localStorage items
       localStorage.removeItem("cart");

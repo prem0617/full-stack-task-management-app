@@ -54,7 +54,7 @@ const Navbar = () => {
       await queryClient.removeQueries({ queryKey: ["authUser"] });
       // Optionally, remove cart or other localStorage items
       localStorage.removeItem("cart");
-      localStorage.removeItem("foodAppToken");
+      localStorage.removeItem("foodApp");
       toast.success("Logout successful");
       navigate("/login");
     },

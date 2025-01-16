@@ -42,7 +42,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.logout = exports.getMe = exports.login = exports.register = void 0;
 var bcrypt_1 = __importDefault(require("bcrypt"));
 var user_model_1 = __importDefault(require("../models/user.model"));
-var geterateTokenAndSetCookies_1 = require("../helpers/geterateTokenAndSetCookies");
+var generateTokenAndSetCookies_1 = require("../helpers/geterateTokenAndSetCookies");
 // Register new user
 var register = function (req, res) { return __awaiter(void 0, void 0, void 0, function () {
     var _a, username, password, lowerusername, isUsernameAlreadyExists, hashedPassword, newUser, error_1;

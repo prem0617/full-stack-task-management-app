@@ -18,7 +18,7 @@ var port = process.env.PORT || 3000;
 
 // CORS options with correct origin and credentials handling
 var corsOptions = {
-    origin: "https://full-stack-task-management-app-ec3e.vercel.app",  // Set to your frontend domain
+    origin: "https://full-stack-task-management-app-ec3e.vercel.app"
     credentials: true, // Allow sending of cookies and other credentials
 };
 

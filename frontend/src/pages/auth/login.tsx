@@ -1,10 +1,10 @@
 import { LunchDining } from "@mui/icons-material";
 import { Button, Card, CircularProgress, TextField } from "@mui/material";
-import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 interface LoginUser {
   username: string;
@@ -14,7 +14,9 @@ interface LoginUser {
 const LoginPage = () => {
   // const navigate = useNavigate();
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
+
+  const navigate = useNavigate();
 
   const { register, handleSubmit } = useForm<LoginUser>();
 
@@ -43,7 +45,7 @@ const LoginPage = () => {
       token;
       localStorage.setItem("foodApp", token);
       toast.success("Login successful");
-      queryClient.invalidateQueries({ queryKey: ["authUser"] });
+      navigate("/");
     },
     onError: (error) => {
       //    (error.message);

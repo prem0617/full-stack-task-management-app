@@ -2,7 +2,7 @@ import bcrypt from "bcrypt";
 
 import { Response, Request } from "express";
 import UserModel from "../models/user.model";
-import { geterateTokenAndSetCookies } from "../helpers/geterateTokenAndSetCookies";
+import { generateTokenAndSetCookies } from "../helpers/geterateTokenAndSetCookies";
 
 // Register new user
 export const register = async (req: Request, res: Response): Promise<void> => {

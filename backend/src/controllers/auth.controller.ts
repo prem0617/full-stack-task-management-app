@@ -101,13 +101,13 @@ export const getMe = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-
 export const logout = async (req: Request, res: Response): Promise<void> => {
   try {
     res.clearCookie("foodApp", {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "lax",
+      secure: process.env.NODE_ENV === "production",  // Ensure this is set correctly in production
+      sameSite: "lax",  // SameSite policy, adjust as needed
+      path: "/",  // Explicitly set the path
     });
 
     res.status(200).json({ message: "Logged out successfully" });

@@ -6,4 +6,13 @@ export default defineConfig({
   build: {
     outDir: "dist",
   },
+  server: {
+    open: true,
+  },
+  resolve: {
+    alias: {
+      "@": "/src",
+    },
+  },
+  base: "/", // Ensures routing works correctly
 });

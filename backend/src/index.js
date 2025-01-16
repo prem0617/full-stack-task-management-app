@@ -16,10 +16,10 @@ dotenv_1.default.config();
 var port = process.env.PORT || 3000;
 (0, connection_1.default)();
 
-// CORS options with correct origin and credentials handling
+
 var corsOptions = {
-    origin: "https://full-stack-task-management-app-ec3e.vercel.app", // Adjust this as per your frontend URL
-    credentials: true, // Allow sending of cookies and other credentials
+    origin: "https://full-stack-task-management-app-ec3e.vercel.app", 
+    credentials: true, 
 };
 
 app.use((0, cookie_parser_1.default)());

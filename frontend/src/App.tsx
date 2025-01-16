@@ -12,9 +12,15 @@ import CartPage from "./pages/main/CartPage";
 import Navbar from "./components/custom/Navbar";
 import MyOrders from "./pages/main/MyOrders";
 
-export interface AuthUser {
+export interface foodToken {
   username: string;
   _id: string;
+  displayName: string;
+}
+
+export interface AuthUser {
+  _id: string;
+  username: string;
   displayName: string;
 }
 
@@ -33,8 +39,17 @@ function App() {
     JSON.parse(localStorage.getItem("cart") || "[]")
   );
 
-  const { data: authUser, isLoading } = useQuery<AuthUser>({
-    queryKey: ["authUser"],
+  // console.log(pathname);
+
+  const foodToken = localStorage?.getItem("foodApp");
+
+  // if (foodToken) {
+  //   <Navigate to={"/login"} />;
+  //   return;
+  // }
+
+  const { data: authUser, isLoading } = useQuery<foodToken>({
+    queryKey: ["foodToken"],
     queryFn: async () => {
       try {
         const response = await axios.get(
@@ -52,7 +67,9 @@ function App() {
     },
   });
 
-  console.log(authUser);
+  if (authUser) console.log(authUser);
+
+  // console.log(foodToken);
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -75,23 +92,23 @@ function App() {
         <Routes>
           <Route
             path="/login"
-            element={!authUser ? <LoginPage /> : <Navigate to="/" />}
+            element={!foodToken ? <LoginPage /> : <Navigate to="/" />}
           />
           <Route
             path="/signup"
-            element={!authUser ? <RegisterPage /> : <Navigate to="/" />}
+            element={!foodToken ? <RegisterPage /> : <Navigate to="/" />}
           />
           <Route
             path="/"
-            element={authUser ? <DashboardPage /> : <Navigate to="/login" />}
+            element={foodToken ? <DashboardPage /> : <Navigate to="/login" />}
           />
           <Route
             path="/cart"
-            element={authUser ? <CartPage /> : <Navigate to="/login" />}
+            element={foodToken ? <CartPage /> : <Navigate to="/login" />}
           />
           <Route
             path="/myorders"
-            element={authUser ? <MyOrders /> : <Navigate to="/login" />}
+            element={foodToken ? <MyOrders /> : <Navigate to="/login" />}
           />
         </Routes>
       </CartProvider>

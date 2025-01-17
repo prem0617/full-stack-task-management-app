@@ -83,27 +83,7 @@ const Navbar = () => {
             Home
           </Button>
         </Link>{" "}
-        <div>
-          <Popover>
-            <PopoverTrigger>
-              <Button variant="outlined" size="small">
-                Profile
-              </Button>
-            </PopoverTrigger>
-            <PopoverContent className="mr-10">
-              <p>
-                <span className="font-medium text-muted-foreground">
-                  Username
-                </span>{" "}
-                : {authUser?.displayName || authUser?.username}
-              </p>
-              <p>
-                <span className="font-medium text-muted-foreground">Id :</span>{" "}
-                {authUser?._id}
-              </p>
-            </PopoverContent>
-          </Popover>
-        </div>
+        
         <Link to={"/myorders"}>
           <Button variant="outlined" size="small">
             My Orders
